@@ -9,7 +9,7 @@ const clientID = `?client_id=${process.env.REACT_APP_PUBLIC_KEY}`;
 function App() {
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [query, setQuery] = useState("");
   const fetchImages = async () => {
     setLoading(true);
@@ -29,7 +29,9 @@ function App() {
       console.log(data);
 
       setPhotos((oldPhotos) => {
-        if (query) {
+        if (query && page === 1) {
+          return data.results;
+        } else if (query) {
           return [...oldPhotos, ...data.results];
         } else {
           return [...oldPhotos, ...data];
@@ -65,7 +67,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchImages();
+    setPage(1);
   };
   return (
     <main>
