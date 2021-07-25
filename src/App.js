@@ -9,15 +9,18 @@ const clientID = `?client_id=${process.env.REACT_APP_PUBLIC_KEY}`;
 function App() {
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState([]);
-
+  const [page, setPage] = useState(1);
   const fetchImages = async () => {
     setLoading(true);
     let url;
-    url = `${mainUrl}${clientID}`;
+    const urlPage = `&page=${page}`;
+    url = `${mainUrl}${clientID}${urlPage}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setPhotos(data);
+      setPhotos((oldPhotos) => {
+        return [...oldPhotos, ...data];
+      });
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -27,7 +30,7 @@ function App() {
 
   useEffect(() => {
     fetchImages();
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     const event = window.addEventListener("scroll", () => {
@@ -38,7 +41,9 @@ function App() {
         !loading &&
         window.innerHeight + window.scrollY >= document.body.scrollHeight - 4
       ) {
-        console.log("it worked!");
+        setPage((oldPage) => {
+          return oldPage + 1;
+        });
       }
     });
     return () => window.removeEventListener("scroll", event);
