@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reactPhotoGenerator/static/css/main.a1c094ad.chunk.css",
+    "main.js": "/reactPhotoGenerator/static/js/main.4a27edc3.chunk.js",
+    "main.js.map": "/reactPhotoGenerator/static/js/main.4a27edc3.chunk.js.map",
+    "runtime-main.js": "/reactPhotoGenerator/static/js/runtime-main.cfec504e.js",
+    "runtime-main.js.map": "/reactPhotoGenerator/static/js/runtime-main.cfec504e.js.map",
+    "static/js/2.ee72bb2a.chunk.js": "/reactPhotoGenerator/static/js/2.ee72bb2a.chunk.js",
+    "static/js/2.ee72bb2a.chunk.js.map": "/reactPhotoGenerator/static/js/2.ee72bb2a.chunk.js.map",
+    "index.html": "/reactPhotoGenerator/index.html",
+    "precache-manifest.251b26fa6aca3f43fcadef41cb414aac.js": "/reactPhotoGenerator/precache-manifest.251b26fa6aca3f43fcadef41cb414aac.js",
+    "service-worker.js": "/reactPhotoGenerator/service-worker.js",
+    "static/css/main.a1c094ad.chunk.css.map": "/reactPhotoGenerator/static/css/main.a1c094ad.chunk.css.map",
+    "static/js/2.ee72bb2a.chunk.js.LICENSE.txt": "/reactPhotoGenerator/static/js/2.ee72bb2a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cfec504e.js",
+    "static/js/2.ee72bb2a.chunk.js",
+    "static/css/main.a1c094ad.chunk.css",
+    "static/js/main.4a27edc3.chunk.js"
+  ]
+}
